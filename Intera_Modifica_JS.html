@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>    
+</head>
+<body>
+    <!-- Interação e Modificação de Elementos HTML via JavaScript-->
+    <!-- Div com o texto original -->
+    <div id="d1">Texto Original</div>
+    <!-- Botão que ao clicar chama o método para alterar o conteúdo do div -->
+    <button onclick="alterar()">Clique Aqui</button>
+    <script>
+        /*Função alterar para usar no botão*/
+        const alterar = () => {
+            let d1 = document.getElementById("d1");
+            /*altera o texto*/
+            d1.innerHTML = "Alterado";
+            /*altera a cor de fundo*/
+            d1.style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>
