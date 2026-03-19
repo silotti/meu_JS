@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head>
+</head>
+<body>
+<h2>Calculadora de Índice de Massa Corporal (IMC)</h2>
+<p>Medida utilizada para avaliar saúde de uma pessoa.</p>
+<p>O cálculo do IMC é feito da seguinte forma:</p>
+<p><strong>IMC = peso (kg) / altura² (m²)</strong></p>
+<p>Com base no valor do IMC, as categorias são as seguintes:</p>    
+<ul>
+  <li>IMC abaixo de 18,5: Abaixo do peso</li>
+  <li>IMC entre 18,5 e 24,9: Peso normal</li>
+  <li>IMC entre 25 e 29,9: Sobrepeso</li>
+  <li>IMC acima de 30: Obesidade de Grau I</li>   
+  <li>IMC acima de 35: Obesidade de Grau II</li>
+</ul>
+
+<form>
+    <label>Peso (kg):</label><input type="number" id="v1">
+    <br><br>
+    <p>Para altura, use [.] ex. 1.80</p>
+    <label>Altura (m):</label><input type="number" id="v2">
+    <br><br>
+    <a href="#" onclick="executar()">Calcular IMC</a>
+</form>
+
+<script src="IMC.js"></script>
+<script>
+const executar = () => {
+    const peso = eval(document.getElementById("v1").value);
+    const altura = eval(document.getElementById("v2").value);
+    const v_imc = imc(peso, altura);
+    const v_sit = situacao(v_imc);
+    //toFixed(2) é para mostrar o resultado do IMC com 2 casas decimais no máximo
+    alert(`IMC: ${v_imc.toFixed(2)} :: Situação: ${v_sit}`);
+}
+</script>
+</body></html>
