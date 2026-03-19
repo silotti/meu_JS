@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head>
+</head><body>
+<h2>Estrutura de Decisão SWITCH e CASE</h2>  
+<p>Verifica o dia da semana</p>
+<p id="demo"></p>
+
+<script>
+let day;
+
+// puxa a data atual do sistema e o método getDay() retorna um número de 0 a 6, onde cada número representa um dia da semana, sendo 0 para domingo e 6 para sábado
+switch (new Date().getDay()) {
+  case (0): day = "Domingo"; break;
+  case (1): day = "Segunda-feira"; break;
+  case (2): day = "Terça-feira"; break;
+  case (3): day = "Quarta-feira"; break;
+  case (4): day = "Quinta-feira"; break;
+  case (5): day = "Sexta-feira"; break;
+  //default significa: nenhum dos casos anteriores então day="Sábado"
+  default: day = "Sábado"; break;
+} 
+document.getElementById("demo").innerHTML = "Hoje é " + day;
+</script>
+
+</body></html>
