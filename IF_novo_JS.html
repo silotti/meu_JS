@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head>
+</head><body>
+<h2>Estrutura de Decisão IF, ELSE IF, ELSE (modo novo)</h2>  
+<p>Modifica o cumprimento dependendo da hora do dia</p>
+<p id="demo">Que horas são?</p>
+<script>
+let painel = document.getElementById("demo");
+//estrutura de decisão if, else if, else (modo novo)
+let hora = new Date().getHours();
+painel.innerHTML = 
+(hora < 12) ? "Bom dia!":
+(hora < 18) ? "Boa tarde!":
+"Boa noite!";
+</script>
+</body></html>

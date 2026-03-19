@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+<!-- Incorporando um arquivo .js externo -->
+<script src="script_calc.js"></script>    
+<!-- Incorporando bootstrap diretamente na página -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<!-- Transforma o body em um container do Bootstrap -->
+<body class="container">
+<form class="form m-2">
+    <label class="form-label">Valor A</label> <input type="number" id="v1"/>
+    <label class="form-label">Valor B</label> <input type="number" id="v2"/>
+    <label class="form-label">Operação</label>
+    <!-- Select é uma cortina de opções, onde o usuário pode escolher apenas uma opção dentre as disponíveis -->
+    <select class="form-select" id="oper">
+        <option>Soma</option> 
+        <option>Subtração</option>
+        <option>Multiplicação</option>
+        <option>Divisão</option>
+        <option>Potência</option>
+    </select>
+    <!-- É um link que chama a função executar quando clicado (bootstrap transforma em botão) -->
+    <a href="#" class="btn btn-primary mt-2"
+    onclick="executar()">Executar</a>
+</form>
+<div class="alert alert-success" id="resp">
+    O resultado aparece aqui</div>
+<script>
+const executar = () => {
+    //Obtendo os valores digitados pelo usuário e armazenando-os em variáveis
+    //eval pega o valor de v1 e transforma texto em número
+    const a = eval(document.getElementById('v1').value);
+    const b = eval(document.getElementById('v2').value);
+    //oper é um select, ou seja, uma cortina de opções, onde o usuário pode escolher apenas uma opção dentre as disponíveis. O selectedIndex retorna o índice da opção selecionada, ou seja, se o usuário escolher a opção "Subtração", o selectedIndex retornará 1, pois a opção "Subtração" é a segunda opção do select (o índice começa em 0).
+    let oper = document.getElementById('oper').selectedIndex; //Obtendo o índice da opção selecionada no select
+    //operador de decisão
+    //Criando uma variável para armazenar o resultado da operação
+    let resultado = (oper==0) ? somar(a,b)
+    :(oper==1) ? subtrair(a,b)
+    :(oper==2) ? multiplicar(a,b)
+    :(oper==3) ? dividir(a,b)
+    :exponencial(a,b);
+
+    //Exibindo o resultado da operação na DIV com id 'resp'
+    document.getElementById('resp').innerHTML = `O resultado é: ${resultado}`;
+}
+
+</script>
+</body>
+</html>
