@@ -15,30 +15,58 @@ while (a <=10) {
 let a = 1;
 do {
   console.log(a);
-  a++;
-} while (a <= 10);
+  a+=1; <!-- a++ ou a+=1, ambos somam 1 -->
+} while (a<=10);
 
 <a>FOR</a>
 <!-- tem: inicialização, condição e incremento -->
 <!-- se o valor inicial for mair que a condição nem executa-->
-for (let a = 1; a <= 10; a++) {
+for (let a=1; a<=10; a++) {
   console.log(a);
 }
 
+<a>Exercicio1 - FOR</a>
+<!-- Trazer dados percorrendo por comprimento total do vetor "array" -->
+<script>
+var frutas = ['Laranja', 'Uva', 'Pera'];
+/*Imprimindo na caixa de diálogo o conteúdo do array 'frutas' utilizando o laço 'for'*/
+for(var i=0; i<frutas.length; i++){
+     console.log('Fruta no Array: ' + frutas[i]);
+}
+</script>
+
+<a>Exercicio2 - FOR IN</a>
+<!-- Trazer dados percorrendo por índice do vetor "array" -->
+<script>
+var frutas = ['Maça', 'Abacate', 'Melancia'];
+/*Imprimindo na caixa de diálogo o conteúdo do array 'frutas' utilizando o laço 'for/in'*/
+for(var x in frutas){
+     console.log('Nova Fruta no Array: ' + frutas[x]);
+}
+</script>
+
 <a>FOR IN</a>
-<!-- for in percorre as propriedades de um objeto -->
-<!-- Iteração em Objeto-->
+<!-- Trazer dados percorrendo por propriedades de um objeto -->
+<!-- Iteração em Objeto (percorre o objeto)-->
+<p>Iteração na propriedades de um Objeto (percorre o objeto)</p>
 <p id="d1"></p>
 <script>
-const pessoa = {nome: "João", lname: "Silva", idade: 30};
+// definindo um: OBJETO pela sintaxe Json
+const person = {nome: "João", snome: "Silva", idade: 30};
 let texto = "";
-for (let x in pessoa) {
-  texto += pessoa[x] + " "; //x é o indice do nome da pessoa
+//para cada x pertencente ao atributo do objeto pessoa, faça:
+//para cada uma das 3 propriedades do objeto person, (person[x], faça):
+for (let x in person) {
+  //agora busca o valor de cada uma das 3 propriedade do objeto: 
+  //em person[x] o valor correspondente, 
+  //person["nome"]="João", person["snome"]="Silva", person["idade"]=30
+  texto += person[x] + " "; //x é o indice da propriedade, nome, snome, idade
 }
 document.getElementById("d1").innerHTML = texto;
 </script>
 
 <a>FOR IN (posicional)</a>
+<!-- Trazer dados percorrendo por índice do vetor "array" -->
 <!-- Iteração em Vetor (Posicional, 0, 1, 2, 3...) -->
 <!--exemplo: const numeros = [10, 20, 30, 70]; -->
 <!-- for of pega a "posição do vetor" do elemento -->
@@ -49,7 +77,9 @@ const cars = ["BMW", "Volvo", "Saab", "Ford"];
 let dado = "";
 // o for in percorre o vetor usando o indice, 0, 1, 2, 3... ou seja, i é o indice do carro, ou seja, 0, 1, 2, 3..., cars[i] é o valor do carro correspondente no indice
 for (let i in cars) {
-  dado += cars[i] + " "; //i é o indice no vetor cars
+  //i é o indice no vetor cars: 0, 1, 2, 3
+  //i é a posição
+  dado += cars[i] + " "; 
 }
 document.getElementById("d2").innerHTML = dado;
 </script>
@@ -57,14 +87,18 @@ document.getElementById("d2").innerHTML = dado;
 
 <a>FOR OF</a>
 <!-- Iteração em Vetor (Elemento) -->
-<!-- for of pega "o" elemento em si -->
+<!-- for of pega "o" elemento em si (de elemento em elemento) -->
+<!-- neste caso percorre os textos e não a posição -->
+<!-- dá pra pegar uma lista de uma coleção para tratar, comum e lista Json-->
+<!-- dá pra navegar por uma lista de elementos e tratar um a um para tratar coleções-->
 <p id="d3"></p>
 <script>
 const cars2 = ["BMW", "Volvo", "Saab", "Ford"];
 //aqui tem que ser let, não pode ser const, para poder ser modificado
-let text = ""; // é o valor de cada elemento no vetor cars2
+let text = ""; // é o valor de cada elemento no vetor: cars2
 // o for of percorre o vetor usando o valor de cada elemento
 for (let z of cars2) {
+  // z é o elemento  
   text += z + " ";
 }
 document.getElementById("d3").innerHTML = text;
