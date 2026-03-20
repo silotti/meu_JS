@@ -1,0 +1,18 @@
+<!--------------------------------------------------------->
+<!-- Ordenação, Mapeamento e Redução -->
+<html><body><h2>Ordenação, Mapeamento e Redução</h2>
+<button onclick="executar()">Ordenar</button>
+<script>        
+executar = () => {
+    const valores = [1,6,5,9,2];    
+    valores.sort(); // Ordena os valores em ordem crescente
+    console.log(valores); // Imprime: [1, 2, 5, 6, 9]
+    console.log(`Valor na posição 3: ${valores[3]}`); // Imprime: "Valor na posição 3: 6"
+    valores.forEach((element,index) => console.log(`Valor[${index}]:${element}`)); // Imprime cada valor do array em uma nova linha
+    //map aplica a função para cada elemento do vetor, multiplicação por 2
+    //reduce soma os dois primeiros valor e vai somando o resultado com o próximo valor do vetor até o fim
+    const somaDobro = valores.map((e)=>e*2).reduce((a,b)=>a+b); 
+    console.log("Soma 2x = "+somaDobro); // Imprime a soma dos valores dobrados
+}
+</script>
+</body></html>

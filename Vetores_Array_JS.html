@@ -1,0 +1,93 @@
+<!-- Criando um array em JavaScript -->
+let cores1 = ["red", "blue", "green"]
+
+<!-- Outra forma de criar um array em JavaScript -->
+let cores2 = new Array("red", "blue", "green")
+
+<!-- Criando um vetor vazio -->
+let cores3 = []
+
+<!-- Acessando elementos do array -->
+console.log(cores1[2]) // Imprime: "green"
+
+<!-- Define a cor do elemento pelo índice -->
+<!-- Define a cor da fonte de texto para o elemento id "demo": azul -->
+document.getElementById("demo").style.color = cores2[1] 
+
+<!--------------------------------------------------------->
+<!-- Iteração em cada indice do Vetor(posicional) -->
+<html><body><h2>for...in</h2>
+<p>Iteração por indice de um Vetor</p>
+<p id="d1"></p>
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let text="";
+for (let x in cars) {
+  text += cars[x] + " "; // x é o índice do elemento no vetor cars[x]
+}
+document.getElementById("d1").innerHTML = text;
+// vai imprimir: "BMW Volvo Saab Ford "
+</script>
+</body></html>
+
+<!-- Iteração em cada elemento do Vetor(Elemento) -->
+<html><body><h2>for...in</h2>
+<p>Iteração em cada elemento de um Vetor</p>
+<p id="d1"></p>
+<script>
+const cars2=["BMW", "Volvo", "Saab", "Ford"];
+let text2="";
+for (let x of cars2) {
+  text2 += x + " "; // x é o elemento no vetor cars2
+}
+document.getElementById("d1").innerHTML = text;
+// vai imprimir: "BMW Volvo Saab Ford "
+</script>
+</body></html>
+
+<!--------------------------------------------------------->
+<!-- Geração de Texto com Join -->
+<html><body><h2>Geração de Texto com Join</h2>
+<script>
+const valores = [1,3,4,7,8];
+const saida = valores.join("::");
+console.log(saida); // Imprime: "1::3::4::7::8"
+</script>
+</body></html>
+
+<!--------------------------------------------------------->
+<!-- Ordenação, Mapeamento e Redução -->
+<html><body><h2>Ordenação, Mapeamento e Redução</h2>
+<button onclick="executar()">Ordenar</button>
+<script>        
+executar = () => {
+    const valores = [1,6,5,9,2];    
+    valores.sort(); // Ordena os valores em ordem crescente
+    console.log(valores); // Imprime: [1, 2, 5, 6, 9]
+    console.log(`Valor na posição 3: ${valores[3]}`); // Imprime: "Valor na posição 3: 6"
+    valores.forEach((element,index) => console.log(`Valor[${index}]:${element}`)); // Imprime cada valor do array em uma nova linha
+    const somaDobro = valores.map((e)=>e*2).reduce((a,b)=>a+b); // Mapeia cada valor para o dobro e depois reduz para a soma total
+   console.log("Soma 2x = "+somaDobro); // Imprime a soma dos valores dobrados
+}
+</script>
+</body></html>
+
+<!--------------------------------------------------------->
+<!-- Exemplo com números randomicos -->
+<html><body><table style="width: 100%">
+<script>        
+const cores = ["red", "green", "blue"];
+//Gera 9 células para cada coluna    
+for(let i=0;i<10;i++){
+    document.write("<tr>"); //abri uma linha da tabela
+    //Gera 9 células para cada linha    
+    for(let j=0;j<10;j++){
+        //Gera um número aleatório entre 0, 1 ou 2
+        //Trunc tira a parte quebrada do número
+        let pos = Math.trunc(Math.random()*3); 
+        document.write(`<td style="background-color:${cores[pos]}">&nbsp;</td>`); // Escreve uma célula com a cor de fundo selecionada
+    }
+    document.write("</tr>");
+}
+</script>
+</table></body></html>
