@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head>
+</head>
+<body>
+<h2>Fibonacci</h2>
+<p>Sequência de Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...</p>
+<form>
+    <label>Valor de x:</label><input id="v1" type="number"/>
+    <br><br>
+    <a href="#" onclick="executar()">Calcular Fibonacci</a>
+</form>
+<div id="resp">O resultado deve aparecer aqui</div>
+
+
+
+<script src="fibonacci.js"></script>
+<script>
+
+const executar = () => {
+    const x = parseInt(document.getElementById("v1").value);
+    let serie="", i=0;
+    while (i<=x) {serie += fibonacci(i) + " "; i++;}
+    document.getElementById("resp").innerHTML = `Resultado: ${serie}`;
+}
+</script>
+</body></html>
