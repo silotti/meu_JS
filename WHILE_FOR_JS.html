@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head>
+</head>
+<body>
+<h2>Estruturas de Repetição: WHILE, DO WHILE, FOR, FOR IN, FOR OF</h2>
+<a>WHILE</a>
+<!-- while verifica a condição antes de executar o bloco, soma depois sai do loop-->
+let a = 1;
+while (a <=10) {
+  console.log(a);
+  a++;
+}
+
+<a> DO WHILE</a>
+<!-- do while sempre executa o bloco pelo menos uma vez -->
+let a = 1;
+do {
+  console.log(a);
+  a++;
+} while (a <= 10);
+
+<a>FOR</a>
+<!-- tem: inicialização, condição e incremento -->
+<!-- se o valor inicial for mair que a condição nem executa-->
+for (let a = 1; a <= 10; a++) {
+  console.log(a);
+}
+
+<a>FOR IN</a>
+<!-- for in percorre as propriedades de um objeto -->
+<!-- Iteração em Objeto-->
+<p id="d1"></p>
+<script>
+const pessoa = {nome: "João", lname: "Silva", idade: 30};
+let texto = "";
+for (let x in pessoa) {
+  texto += pessoa[x] + " "; //x é o indice do nome da pessoa
+}
+document.getElementById("d1").innerHTML = texto;
+</script>
+
+<a>FOR IN (posicional)</a>
+<!-- Iteração em Vetor (Posicional, 0, 1, 2, 3...) -->
+<!--exemplo: const numeros = [10, 20, 30, 70]; -->
+<!-- for of pega a "posição do vetor" do elemento -->
+<p id="d2"></p>
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+//aqui tem que ser let, não pode ser const, para poder ser modificado
+let dado = "";
+// o for in percorre o vetor usando o indice, 0, 1, 2, 3... ou seja, i é o indice do carro, ou seja, 0, 1, 2, 3..., cars[i] é o valor do carro correspondente no indice
+for (let i in cars) {
+  dado += cars[i] + " "; //i é o indice no vetor cars
+}
+document.getElementById("d2").innerHTML = dado;
+</script>
+
+
+<a>FOR OF</a>
+<!-- Iteração em Vetor (Elemento) -->
+<!-- for of pega "o" elemento em si -->
+<p id="d3"></p>
+<script>
+const cars2 = ["BMW", "Volvo", "Saab", "Ford"];
+//aqui tem que ser let, não pode ser const, para poder ser modificado
+let text = ""; // é o valor de cada elemento no vetor cars2
+// o for of percorre o vetor usando o valor de cada elemento
+for (let z of cars2) {
+  text += z + " ";
+}
+document.getElementById("d3").innerHTML = text;
+</script>
+
+
+</body></html>
