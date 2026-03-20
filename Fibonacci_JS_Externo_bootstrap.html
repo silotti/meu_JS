@@ -1,20 +1,26 @@
 <!DOCTYPE html><html><head>
+<!-- Incorporando bootstrap diretamente na página -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
+<body class="container">
 <h2>Fibonacci</h2>
 <p>Sequência de Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...</p>
-<form>
-    <label>Valor de x:</label><input id="v1" type="number"/>
+<form class="form m-2">
+    <label class="form-label">Valor de x:</label>
+    <input class="form-control" id="v1" type="number"/>
     <br><br>
-    <a href="#" onclick="executar()">Calcular Fibonacci</a>
+    <a class="btn btn-primary" href="#" onclick="executar()">
+    Calcular Fibonacci</a>
 </form>
-<div id="resp">O resultado deve aparecer aqui</div>
+<div class="alert alert-success" id="resp">
+O resultado deve aparecer aqui</div>
 
 <!-- Script externo para calcular Fibonacci -->
 <script src="fibonacci.js"></script>
 
 <!-- Script para executar a função Fibonacci -->
-<script>    
+<script>
 const executar = () => {
     const x = parseInt(document.getElementById("v1").value);
     let serie="", i=0;
