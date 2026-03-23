@@ -83,13 +83,45 @@ document.getElementById("demo").innerHTML=myChildren;
 
 <!--------------------------------------------------------->
 <!-- Matrizes Vetores -->
-<!-- Cópia com Slice -->
+<!-- Remoção com Slice -->
 <html><body>
 <script>   
     const dias_semana = ["dom", "seg", "ter", "qua", "qui", "sex", "sab"];
+    //do indice 1 ao 5, usa-se (1,6) no sexto ele Termina
     const dias_uteis=dias_semana.slice(1,6);
     //inicio e fim+1
     console.log(dias_semana);
     console.log(dias_uteis);
 </script>
 </body></html>
+
+<!--------------------------------------------------------->
+<!-- Matrizes Vetores -->
+<!-- Remoção ou Inserção com Splice -->
+<html><body>
+<script>   
+    const vetor2 = [1,2,3,4,5,6,7]; //declara o vetor
+    console.log(vetor2); //1,2,3,4,5,6,7
+
+    //no indice 2, remove 3 valores, no caso os valores:3,4,5 
+    vetor2.splice(2,3);
+    console.log(vetor2);//1,2,6,7
+
+    //no indice 2, remove 0 valores, e adiciona os valores X e X
+    //empurra outros valores existentes pra tras de X,X na pilha
+    //se trocar 0 por 1, teria removido o 6
+    vetor2.splice(2,0,"X","X");
+    console.log(vetor2); //1,2,X,X,6,7
+</script>
+</body></html>
+
+<!--------------------------------------------------------->
+<!-- cuidado! 
+ a função delete, não exclui a posição, apenas indefine ela -->
+<html><body><script>
+var frutas = ["banana", "maca"];
+delete frutas[0];
+console.log(frutas);
+</script></body></html>
+
+<!--------------------------------------------------------->

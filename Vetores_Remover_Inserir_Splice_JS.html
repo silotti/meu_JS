@@ -1,0 +1,27 @@
+<!--------------------------------------------------------->
+<!-- Matrizes Vetores -->
+<!-- Remoção ou Inserção com Splice (melhor que Slice)-->
+<html><body>
+<script>   
+    const vetor2 = [1,2,3,4,5,6,7]; //declara o vetor
+    console.log(vetor2); //Imprime: 1,2,3,4,5,6,7
+
+    //no indice 2, remove 3 valores, no caso os valores:3,4,5 
+    vetor2.splice(2,3);
+    console.log(vetor2);//1,2,6,7
+
+    //no indice 2, remove 0 valores, e adiciona os valores X e X
+    //empurra outros valores existentes pra tras de X,X na pilha
+    //se trocar 0 por 1, teria removido o 6
+    vetor2.splice(2,0,"X","X");
+    console.log(vetor2); //imprime: 1,2,X,X,6,7
+
+//outro exemplo:    
+    //pode usar: const , var , let
+    var alunos = ['Alex', 'Anna', 'João'];
+    console.log(alunos); //imprime: 'Alex, 'Anna', 'João'
+
+    alunos.splice(1,1,'Helena');
+    console.log(alunos); //imprime: 'Alex, 'Helena', 'João'
+</script>
+</body></html>
