@@ -1,0 +1,49 @@
+<!--------------------------------------------------------->
+<!-- Requisições Assincronas em Java Script -->
+<!-- SPA - Single Page Aplication -->
+<!-- AJAX - Http Assincrono, Java Script e XML -->
+<html><body><script>
+//exemplos de Objetos JSON
+
+//JSON como texto
+//{"name":"John","idade":25}
+
+//JSON no Java Script
+//{name:"John",idade:25}
+
+</script></body></html>
+
+<!--------------------------------------------------------->
+<!-- Chamada HTTP com XmlHttpRequest -->
+<html><body><script>
+//gera um objeto
+let http=new XMLHttpRequest();
+//resposta que vai dar a cada mudança ao nivel do protocolo
+xhttp.onreadystatechange=function(){
+    //readyState==4(completou) e status==200(com sucesso)
+    if (this.readyState==4 && this.status==200){
+        document.getElementById("demo").innerHTML=xhttp.responseText;        
+    }
+}
+//para abrir uma conexão(true, para assincrono)
+xhttp.open("GET","endereço",true);
+xhttp.send();
+
+</script></body></html>
+
+<!--------------------------------------------------------->
+<!-- Formato JSON (Java Script Object Notation) -->
+<html><body><p id = "demo"></p><script>
+const xhttp = new XMLHttpRequest();
+xhttp.onload = () => {
+    const xmlDoc=this.responseXML;
+    const x = xmlDoc.getElementByTagName("ARTIST");
+    let txt = "";
+    for (let i=0; i<x.legth; i++)
+        txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+    document.getElementById("demo").innerHTML = txt;    
+}
+xhttp.open("GET","cd_catalog.xml");
+xhttp.send();
+
+</script></body></html>
