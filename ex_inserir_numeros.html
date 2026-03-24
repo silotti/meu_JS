@@ -1,0 +1,53 @@
+<!-- Exercicio inserir 2 num inteiros positivos -->
+<html><head>
+</head>
+<body>
+<!-- 
+   <h1>2 Numeros Inteiros Positivos</h1>
+   <form>
+    <label>Valor A</label> <input type="number" id="v1"/>
+    <label>Valor B</label> <input type="number" id="v2"/>
+    <label>Operação</label>
+    <a href="#" onclick="executar()">Executar</a>
+   </form> 
+-->
+<script>
+    var numeros=[];
+    //var n3 = prompt("teste: ");
+    numeros[0]=solicitaNum1();
+    numeros[1]=solicitaNum2();
+    var result=divida(numeros);
+
+    //Exibindo o resultado da divisão na tela
+    alert('O resultado da divisão é igual a: ' + result);
+
+/*Funções Javascript*/
+function solicitaNum1(){
+    var n1 = prompt("Insira o primeiro número: ");
+    if(n1 < 0){
+        alert("O número precisa ser inteiro e positivo");
+              return soliticaNum1();
+    }else{
+        return n1;
+    }    
+}
+
+function solicitaNum2(){
+    var n2 = prompt("Insira o primeiro número: ");
+    if(n2 < 0){
+        alert("O número precisa ser inteiro e positivo");
+              return soliticaNum2();
+    }else{
+        return n2;
+    }    
+}
+
+//função de divisão
+function divida(numeros){
+     var resultado = 0;
+     resultado = numeros[0] / numeros[1];
+     return resultado;
+}
+
+</script>
+</body></html>   

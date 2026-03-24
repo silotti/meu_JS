@@ -1,0 +1,34 @@
+<!--------------------------------------------------------->
+<!-- Vetores, Gráfico com Google Charts -->
+<!-- Criar um Grafico e Calcular a média de um Vetor  -->
+<!-- Utilizar um arquivo .js externo -->
+<!-- insere e executa varias vezes -->
+<!-- insere e executa varias vezes -->
+<html><head>
+    <!--Adiciona biblioteca do Google Charts-->
+    <script type="text/javascript"
+            src="https://www.gstatic.com/charts/loader.js"></script>
+</head><body>
+   <h1>Google Charts</h1> 
+   <form>
+    <label>Valor de X</label>
+    <input type="number" id="v1"/>
+    <a href="#" onclick="executar()">Executar</a>
+   </form>
+   <div id="chart_div"></div>
+   <div id="media"></div>
+
+<!--chama o script google-->   
+<script src="GoogleCharts.js"></script>
+<!--executar-->   
+<script>
+ const executar=()=>{
+    const x = eval(document.getElementById("v1").value);
+    addValor(x);
+    //carrega gráfico do tipo linha
+    google.charts.load('current',{packages:['corechart','line']});
+    google.charts.setOnLoadCallback(drawBasic);
+    //mostra a media do valor
+    document.getElementById("media").innerHTML=`Media:${media()}`;
+ }
+</script></body></html>
