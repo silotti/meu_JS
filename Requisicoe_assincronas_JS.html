@@ -32,18 +32,56 @@ xhttp.send();
 </script></body></html>
 
 <!--------------------------------------------------------->
-<!-- Formato JSON (Java Script Object Notation) -->
+<!--Formato JSON (Java Script Object Notation) , -->
+<!--porém nesse caso é XML não JSON -->
 <html><body><p id = "demo"></p><script>
 const xhttp = new XMLHttpRequest();
 xhttp.onload = () => {
+    //pegando a resposta no formato XML
     const xmlDoc=this.responseXML;
+    //pegando todas as tags ARTIST neste XML
     const x = xmlDoc.getElementByTagName("ARTIST");
     let txt = "";
+    //para cada elemnto encontrado
     for (let i=0; i<x.legth; i++)
         txt = txt + x[i].childNodes[0].nodeValue + "<br>";
     document.getElementById("demo").innerHTML = txt;    
 }
 xhttp.open("GET","cd_catalog.xml");
 xhttp.send();
+
+</script></body></html>
+
+<!--------------------------------------------------------->
+<!-- Utilização da Fetch API -->
+<html><body><script>
+//lê esse arquivo no servidor
+let file = "fetch_info.txt";
+//pega o texto
+fetch (file).then(x => x.text())
+        // então coloca dentro de uma camada qualquer como uma div
+       .then(y => document.getElementById("demo1").innerHTML = y);
+
+// outra forma de fazer       
+async function getText(file){
+    let x = await fetch(file);
+    let y = await x.text();
+    document.getElementById("demo2").innerHTML = y;    
+}
+getText("fetch_info.txt");
+
+</script></body></html>
+
+<!--------------------------------------------------------->
+<!-- Utilizando Fetch API para HTTP no modo GET -->
+<html><body><script>
+//o método padrão é o GET para consulta
+
+async function loadNames(){
+    const response = await fetch('/api/names');
+    const names = await response.json();
+
+    console.log(names); //[{name:'Joker'},{name:'Batman'}]
+}
 
 </script></body></html>
