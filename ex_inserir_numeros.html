@@ -12,41 +12,58 @@
    </form> 
 -->
 <script>
+    //cria o array vazio
     var numeros=[];
-    //var n3 = prompt("teste: ");
-    numeros[0]=solicitaNum1();
-    numeros[1]=solicitaNum2();
-    var result=divida(numeros);
+    //armazena o primeiro numero da funcao no indice 0
+    numeros[0]=f_solicitaNum1();
+    //numeros[0]= prompt("primeiro numero sem funcao: ");
+    //armazena o segundo numero da funcao no indice 1
+    numeros[1]=f_solicitaNum2();
+    //armazena resultado da divisão em result
+    var result=f_divisao(numeros);
 
     //Exibindo o resultado da divisão na tela
     alert('O resultado da divisão é igual a: ' + result);
 
-/*Funções Javascript*/
-function solicitaNum1(){
+/*Funções Javascript sempre após execução*/
+/*Função Primeiro numero*/
+function f_solicitaNum1(){
     var n1 = prompt("Insira o primeiro número: ");
+
+    //testa se é positivo
     if(n1 < 0){
         alert("O número precisa ser inteiro e positivo");
-              return soliticaNum1();
-    }else{
+          return f_soliticaNum1();
+    }
+
+    //testa se não é numero
+    else if(isNaN(n1)){
+        alert("Precisa ser um numero");
+          return f_soliticaNum1();
+    }
+
+    //caso contrario
+    else{
         return n1;
     }    
 }
 
-function solicitaNum2(){
-    var n2 = prompt("Insira o primeiro número: ");
+/*Função Segundo numero*/
+function f_solicitaNum2(){
+    var n2 = prompt("Insira o segundo número: ");
     if(n2 < 0){
         alert("O número precisa ser inteiro e positivo");
-              return soliticaNum2();
+              return f_solicitaNum2();
     }else{
         return n2;
     }    
 }
 
-//função de divisão
-function divida(numeros){
-     var resultado = 0;
-     resultado = numeros[0] / numeros[1];
-     return resultado;
+//função que divide
+function f_divisao(numeros){
+     var r = 0;
+     r = numeros[0] / numeros[1];
+     return r;
 }
 
 </script>
