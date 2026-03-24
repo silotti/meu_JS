@@ -83,5 +83,24 @@ async function loadNames(){
 
     console.log(names); //[{name:'Joker'},{name:'Batman'}]
 }
+loadNames();
+
+</script></body></html>
+<!--------------------------------------------------------->
+<!-- Utilizando Fetch API para HTTP no modo POST -->
+<html><body><script>
+//o método POST é utilizado para inclusão no REST
+
+async function postNames(){
+    const object = {name:'James Gordon'};
+    const rsponse = await fetch('/api/names',{
+        method: 'POST',
+        body: JSON.stringify(object),
+        headers: {'Contend-Type':'application/json'} 
+    });
+    const responseText = await response.text();
+    console.log(responseText);  //'OK'
+}
+postNames();
 
 </script></body></html>
