@@ -1,0 +1,27 @@
+<!-- Exemplo_XMLHttpRequest_AJAX -->
+<!-- Utilizar XMLHttpRequest para chamar GET para httpbin.org-->
+<!-- Vai retornar uma resposta no formato JSON -->
+<!-- Se quiser no formato de Java Script, tem que usa:jason.pars -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<body>
+	<h1>API de Testes httpbin</h1>
+	<p>Utilizando requisições assíncronas com XMLHttpRequest</p>
+	<form>
+		<label>Name</label><input id="n1" type="text"/>
+		<!-- o evento que vai ser on click -->
+		<a href="#" onclick="executar()">Executar</a>
+	</form>
+	<div id="retorno"></div>
+
+	<!--importo o script .js do servidor como a fução do AJAX-->
+	<script src="XMLHttpRequest_AJAX.js"></script>
+	<script>
+		const executar = () =>{
+			//quero texto, eval sé se quiser pegar um numero
+			const nome = document.getElementById("n1").value;
+			//passa para a função ajax(.js), passando o nome e retorno
+			ajax(nome,"retorno");
+		}
+	</script>
+</body></html>
