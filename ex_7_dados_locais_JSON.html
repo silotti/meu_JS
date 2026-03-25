@@ -1,4 +1,5 @@
 <!-- puxando dados de json local (dados.json) -->
+<!-- só funciona em servidor, como o vscode emula servidor, funciona-->
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -10,7 +11,7 @@
 </body>
      <script type="text/javascript">
           function loadRemoteJson(){
-              fetch('dados.json', {
+              fetch('dados_locais_JSON.json', {
                    method: 'get'
                })
                .then(function(response) {
