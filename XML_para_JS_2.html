@@ -1,0 +1,41 @@
+<!-- Leitura de url com API XML para Teste-->
+<!-- https://hugoribeiro.com.br/Curso_HTML/xml/bilhete_asp.xml -->
+<!-- ou https://www.w3schools.com/xml/note.xml -->
+<!-- recebe dado no formato XML, -->
+<!-- utilizar a API fetch para: acessar a url, ler o XML -->
+<!-- retorna lista de dados a partir do XML => de: para: messagem: -->
+ 
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>XML na Prática</title>
+</head>
+<body>
+	<h1>Leitura de XML com XMLHttpRequest</h1>
+	<button onclick="executar()">Executar</button>
+	<ul id="retorno"></ul>
+	<script>
+		function getNota(idElemento) {
+			const xmlUrl = "https://hugoribeiro.com.br/Curso_HTML/xml/bilhete_asp.xml";
+			const proxy  = "https://corsproxy.io/?" + encodeURIComponent(xmlUrl);
+
+			fetch(proxy)
+				.then(res => res.text())
+				.then(text => {
+					const parser = new DOMParser();
+					const xml    = parser.parseFromString(text, "text/xml");
+					const elemento = document.getElementById(idElemento);
+					const tags     = xml.documentElement.children;
+					let html = "";
+					for (const tag of tags) {
+						html += `<li><b>${tag.tagName}:</b> ${tag.textContent}</li>`;
+					}
+					elemento.innerHTML = html;
+				})
+				.catch(err => console.error("Erro:", err));
+		}
+		function executar() {
+			getNota("retorno");
+		}
+	</script>
+</body></html>

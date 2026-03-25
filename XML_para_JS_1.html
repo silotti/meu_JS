@@ -1,0 +1,44 @@
+<!-- Leitura de url com API XML para Teste-->
+<!-- https://hugoribeiro.com.br/Curso_HTML/xml/bilhete_asp.xml -->
+<!-- ou https://www.w3schools.com/xml/note.xml -->
+<!-- recebe dado no formato XML, -->
+<!-- utilizar a API fetch para: acessar a url, ler o XML -->
+<!-- retorna lista de dados a partir do XML => de: para: messagem: -->
+
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ler XML</title>
+</head>
+<body>
+<h2>Conteúdo do XML</h2>
+<div id="resultado"></div>
+<script>
+  const xmlString = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <note>
+      <to>Tove</to>
+      <from>Jani</from>
+      <heading>Reminder</heading>
+      <body>Don't forget me this weekend!</body>
+    </note>
+  `;
+
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(xmlString, "text/xml");
+
+  const to      = xml.getElementsByTagName("to")[0].textContent;
+  const from    = xml.getElementsByTagName("from")[0].textContent;
+  const heading = xml.getElementsByTagName("heading")[0].textContent;
+  const body    = xml.getElementsByTagName("body")[0].textContent;
+
+  document.getElementById("resultado").innerHTML = `
+    <p><b>Para:</b> ${to}</p>
+    <p><b>De:</b> ${from}</p>
+    <p><b>Título:</b> ${heading}</p>
+    <p><b>Mensagem:</b> ${body}</p>
+  `;
+</script>
+
+</body>
+</html>
