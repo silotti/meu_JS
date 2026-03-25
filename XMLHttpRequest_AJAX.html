@@ -14,11 +14,11 @@
 	</form>
 	<div id="retorno"></div>
 
-	<!--importo o script .js do servidor como a fução do AJAX-->
+	<!--importar o script .js do servidor como a fução do AJAX-->
 	<script src="XMLHttpRequest_AJAX.js"></script>
 	<script>
 		const executar = () =>{
-			//quero texto, eval sé se quiser pegar um numero
+			//quero texto, eval só se quiser pegar um número
 			const nome = document.getElementById("n1").value;
 			//passa para a função ajax(.js), passando o nome e retorno
 			ajax(nome,"retorno");
