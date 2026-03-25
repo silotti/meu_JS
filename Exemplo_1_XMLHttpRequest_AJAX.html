@@ -1,3 +1,4 @@
+<!-- Exemplo_XMLHttpRequest_AJAX -->
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -11,6 +12,7 @@
 	<img id="img_dog" src="" alt="Aguardando a imagem ser carregada" />
 	<br/>
 	<button onclick="carregarImagens()">Carregar Imagens</button>
+
 </body>
 	<script type="text/javascript">
 		function carregarImagens(){
@@ -18,11 +20,13 @@
 			var url = "https://dog.ceo/api/breeds/image/random"
 
 			xmlHttpRequest.open("GET", url, true);
+
 			xmlHttpRequest.onreadystatechange = function() {
 				if (xmlHttpRequest.readyState == 3) {
 					console.log('Carregando o conteúdo');
 				}
 				if (xmlHttpRequest.readyState == 4) {
+				
 					var jsonResponse = JSON.parse(xmlHttpRequest.responseText);
 					console.log('Requisição Finalizada');
 					console.log('Resultado da Requisição: ' + jsonResponse);
@@ -32,6 +36,8 @@
 					imgDog.src = jsonResponse.message;
 				}
 			};
+
+
 			xmlHttpRequest.send(null);
 		}
 	</script>
