@@ -1,0 +1,75 @@
+<!-- Constantes de Fuxo: for in , for of -->
+<!-- contante de numeros -->
+<html><body><script>
+const array_numeros = [45, 4, 9, 16, 25];
+let txt = "";
+//para cada posição pegue o numero na posição
+for (let x in array_numeros){
+    txt += array_numeros[x];
+}
+</script></body></html>
+<!------------------------------------>
+
+<!-- exemplo1 for in (índices do array) -->
+<html><body><script>
+const numeros = [10, 20, 30];
+let resultado = "";
+//corre pelo array numeros usando indice i
+for (let i in numeros) {
+    resultado += "Índice: " + i + " Valor: " + numeros[i] + "\n";
+}
+console.log(resultado);
+
+//✔ Saída:
+//Índice: 0 Valor: 10
+//Índice: 1 Valor: 20
+//Índice: 2 Valor: 30
+</script></body></html>
+
+<!-- exemplo2 for in (valores do array)-->
+<html><body><script>
+const numeros2 = [5, 10, 15];
+let soma = 0;
+
+for (let valor of numeros2) {
+    soma += valor;
+}
+
+console.log(soma); // 30
+</script></body></html>
+
+<!-- ou --------------------------------------------------------->
+<!-- contante de letras -->
+<html><body><script>
+const array_letters = ["a", "b", "c"];
+//cada letra do conjunto
+for (const x of array_letters){
+    txt += x;    
+}
+</script></body></html>
+<!------------------------------------>
+
+<!-- exemplo1 for of (com objetos)-->
+<html><body><script>
+const pessoa = {nome: "João", idade: 30, cidade: "Londrina"};
+for (let x in pessoa) {
+    console.log(x + ": " + pessoa[x]);
+}
+
+//✔ Saída:
+//nome: João
+//idade: 30
+//cidade: Londrina
+</script></body></html>
+
+<!-- exemplo2 for of (com string)-->
+<html><body><script>
+const palavra = "JS";
+for (let letra of palavra) {
+    console.log(letra);
+}
+
+//✔ Saída:
+//J
+//S
+</script></body></html>
