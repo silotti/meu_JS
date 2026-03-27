@@ -1,0 +1,18 @@
+<!-- Variável com Objeto JavaScript tendo propriedades, -->
+<!-- nome e idade, não precisa da função construtora -->
+<html><body><script>
+//exemplo de objeto JSON (string)
+//const x = '{"nome":"Ana","idade":25}';
+
+//Objeto JavaScript é x
+const x = {
+    nome:"Ana", 
+    idade:25,
+    exibir() {
+        alert(`${this.nome} :: ${this.idade}`);
+    }
+};
+
+//chama o método
+x.exibir();
+</script></body></html>

@@ -1,0 +1,31 @@
+<!-- Objetos JavaScript-->
+<!-- Função construtora que permite criar objetos -->
+
+<!-- Sinatxe antiga-->
+<html><body><script>
+function Pessoa(nome, idade){
+    this.nome = nome;
+    this.idade = idade;
+    this.exibir = () =>
+    alert(`${this.nome} :: ${this.idade}`);
+}
+</script></body></html>
+
+<!-- Sintaxe Nova-->
+<html><body><script>
+class Pessoa{
+    constructor(nome, idade){
+        this.nome = nome;
+        this.idade = idade;
+    }
+    exibir = () => 
+    alert(`${this.nome} :: ${this.idade}`);
+} 
+</script></body></html>
+
+<!-- Objeto JavaScript, não precisa da função construtora-->
+<html><body><script>
+const p = {nome:"Ana", idade:25,
+exibir(){alert(`${this.nome} :: ${this.idade}`);}
+};
+</script></body></html>
