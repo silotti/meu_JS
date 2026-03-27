@@ -1,0 +1,21 @@
+<!-- Objetos-->
+<!-- JSON, não precisa da função construtora-->
+<html><body><script>
+//array de Objetos, JSON    
+let pessoas1 = [{idade:25, nome:"Ana"},{idade:43, nome:"Carlos"}];
+</script></body></html>
+
+<!-- JavaScript -->
+<!-- Função construtora que permite criar objetos -->
+<html><body><script>              
+function Pessoa(nome, idade){
+    this.nome = nome;
+    this.idade = idade;
+}
+//array que contém objetos criados com a função construtora Pessoa
+let pessoas=[
+    new Pessoa("Ana", 25),
+    new Pessoa("Carlos", 43)
+];
+</script></body></html>
+
