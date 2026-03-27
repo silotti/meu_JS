@@ -12,11 +12,13 @@
 <script src="fatorial.js"></script>
      
 <!-- Incorporando JavaScript interno -->
-<script> 
+<script>
+     //usa o valor digitado pelo user
      execFatorial = () => {
           let numero = eval(prompt("Valor"));
           alert(`Fatorial de ${numero}:${fatorial(numero)}`);
      }
+     //usa o valor do array valores
      execSomatorio = () => {
           const valores = [1,2,3,4,5,6];
           alert(`Soma dos numeros de 1 a 6: ${somatorio(valores)}`);
